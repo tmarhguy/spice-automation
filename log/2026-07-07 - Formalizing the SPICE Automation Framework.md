@@ -1,6 +1,6 @@
 # Formalizing the SPICE Automation Framework
 
-*July 11, 2026*
+*July 7, 2026*
 
 ---
 

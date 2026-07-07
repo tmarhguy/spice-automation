@@ -16,7 +16,7 @@ A Python pipeline that drives iterative **NGSpice** simulation runs, parses stru
 <p align="center"><em>Top-level validation: writes then reads <code>0x5</code> and <code>0xA</code> — from <a href="examples/64b-sram/">64b-sram</a></em></p>
 
 
-The proof circuit is a full-custom **16×4 SRAM macro** ([`examples/64b-sram`](examples/64b-sram), ESE 3700 Proj2) that originally shipped with hardcoded C++ and Python tooling. This framework pulls that optimization loop out of the project repo and formalizes it — so the next deck, course, or research spin does not start from scratch. The [design journal](log/) is where the origin story lives; this README is the map.
+The proof circuit is a full-custom **16×4 SRAM macro** ([`examples/64b-sram`](examples/64b-sram), ESE 3700 Proj2) that originally shipped with hardcoded C++ and Python tooling. This framework pulls that optimization loop out of the project repo and formalizes it — so the next deck, course, or research spin does not start from scratch. The [design journal](https://tmarhguy.com/writing/#writing-spice-automation) is where the origin story lives; this README is the map.
 
 
 
@@ -24,7 +24,7 @@ The proof circuit is a full-custom **16×4 SRAM macro** ([`examples/64b-sram`](e
 
 ## Why SPICE Automation
 
-SPICE Automation is intentionally a **workflow machine**. Every odd choice is documented somewhere in [log/](log/) — what was tried on the bench, what broke the iteration loop, what got pulled out of a course repo and generalized. If you love silicon because you like *measuring* it, not just drawing it, that journal is the real entry point. Start with [Formalizing the SPICE Automation Framework](log/2026-08-08%20-%20Formalizing%20the%20SPICE%20Automation%20Framework.md).
+SPICE Automation is intentionally a **workflow machine**. Every odd choice is documented somewhere in the [design journal](https://tmarhguy.com/writing/#writing-spice-automation) — what was tried on the bench, what broke the iteration loop, what got pulled out of a course repo and generalized. If you love silicon because you like *measuring* it, not just drawing it, that journal is the real entry point. Start with [Formalizing the SPICE Automation Framework](https://tmarhguy.com/writing/2026-07-07-formalizing-the-spice-automation-framework/).
 
 <p align="center">
   <img src="media/sram/fmax_terminal.png" alt="Sustained f_max binary search — 4.571 GHz, steady verify PASS" width="76%" />
@@ -140,7 +140,7 @@ The SRAM recipe migrated from [`find_fmax.py`](examples/64b-sram/spice/find_fmax
 | SRAM recipe config | [`recipes/sram/config.yaml`](recipes/sram/config.yaml) | `fmax`, `sweep` commands |
 | Process model | `SPICE_MODEL_PATH` env var (not committed) | Runtime `.include` rewrite |
 | Committed reports | [`reports/`](reports/) | Resume artifacts, regression baselines |
-| Design journal | [`log/`](log/) | Origin story, framework decisions |
+| Design journal | [tmarhguy.com/writing](https://tmarhguy.com/writing/#writing-spice-automation) · [`log/`](log/) | Origin story, framework decisions |
 
 **Policy:** Submodule decks are editable source. The framework rewrites model paths and width scales at runtime — never commit proprietary model cards. See [`models/README.md`](models/README.md).
 
@@ -235,7 +235,8 @@ CI runs unit tests on every push. Full NGSpice regression is available via **Act
 
 | Resource | Content |
 |----------|---------|
-| [log/](log/) | Design journal — start with [Formalizing the SPICE Automation Framework](log/2026-08-08%20-%20Formalizing%20the%20SPICE%20Automation%20Framework.md) |
+| [Design journal](https://tmarhguy.com/writing/#writing-spice-automation) | Published build log — start with [Formalizing the SPICE Automation Framework](https://tmarhguy.com/writing/2026-07-07-formalizing-the-spice-automation-framework/) |
+| [`log/`](log/) | Obsidian vault mirror (local drafts) |
 | [examples/README.md](examples/README.md) | Submodule index |
 | [reports/README.md](reports/README.md) | Committed pipeline artifacts |
 | [models/README.md](models/README.md) | Process model card setup |
