@@ -1,1 +1,11 @@
+/log/
 /log/.obsidian
+dist/
+*.egg-info/
+.eggs/
+__pycache__/
+.pytest_cache/
+*.pyc
+.DS_Store
+examples/64b-sram/spice/top_fmax_tmp.spi
+examples/64b-sram/spice/top_opt_tmp_*.spi
