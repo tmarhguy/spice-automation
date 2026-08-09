@@ -1,0 +1,6 @@
+[submodule "examples/64b-sram"]
+	path = examples/64b-sram
+	url = https://github.com/tmarhguy/64b-sram.git
+[submodule "examples/full-adder"]
+	path = examples/full-adder
+	url = https://github.com/tmarhguy/full-adder.git
